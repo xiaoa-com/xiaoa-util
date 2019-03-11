@@ -1,10 +1,9 @@
-package com.xiaoa.util;
+package com.xiaoa.util.http;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 import java.io.File;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -15,6 +14,8 @@ import java.net.URL;
  * @Version 1.0
  **/
 public class HttpDownLoadUtil {
+
+
     private HttpDownLoadUtil() {
     }
 
@@ -40,7 +41,9 @@ public class HttpDownLoadUtil {
     }
 
     @Test
-    public void testDownLoad(){
-        downLoadByUrl("https://img01.sogoucdn.com/app/a/100520093/339f7cbe2d55caa5-9d1043cca1534199-093a9343ea9a7bf40b3e7765c329e02f.jpg","D://test","小新.jpg");
-    };
+    public void testDownLoad() {
+        downLoadByUrl("https://img01.sogoucdn.com/app/a/100520093/339f7cbe2d55caa5-9d1043cca1534199-093a9343ea9a7bf40b3e7765c329e02f.jpg", "D://test", "小新.jpg");
+    }
+
+    ;
 }
