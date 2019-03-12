@@ -1,10 +1,10 @@
 # xiaoa-util
 自己的工具类
 
-#HttpDownLoadUtil
+# HttpDownLoadUtil  
 1.通过url下载文件到指定的本地目录 
 
-#FileUtil
+# FileUtil  
 1.删除文件夹下所有文件,保留文件夹本身  
 2.删除文件夹及文件夹下所有文件  
 3.获取文件夹包括子文件夹下所有文件的绝对路径  
@@ -18,5 +18,5 @@
 
 
 
-#友情援助  
+# 友情援助  
 ![image](https://github.com/niyite/image/blob/master/1552375153915.jpg)
