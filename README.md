@@ -2,7 +2,7 @@
 自己的工具类
 
 #HttpDownLoadUtil
-1.通过url下载文件  
+1.通过url下载文件到指定的本地目录 
 
 #FileUtil
 1.删除文件夹下所有文件,保留文件夹本身  
