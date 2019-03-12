@@ -3,6 +3,8 @@ package com.xiaoa.util.file;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ClassName FileUtil
@@ -15,6 +17,61 @@ public class FileUtil {
 
 
     private FileUtil() {
+    }
+
+    /**
+     * 获取目录下所有文件夹名,不包括子文件夹和文件名
+     *
+     * @param path
+     */
+    public static List<String> getFileNameInFolder(String path) {
+        File file = new File(path);
+        File[] files = file.listFiles();
+        List<String> fileNameList = new ArrayList<>();
+        if (null != files) {
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    fileNameList.add(f.getName());
+                }
+            }
+        }
+        return fileNameList;
+    }
+    
+    /**
+     * 获取目录下所有的文件的绝对路径
+     *
+     * @param path
+     */
+    public static List<String> getFilePathInFolder(String path) {
+        File file = new File(path);
+        File[] files = file.listFiles();
+        List<String> filePathList = new ArrayList<>();
+        if (null != files) {
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    filePathList.addAll(FileUtil.getFilePathInFolder(f.getAbsolutePath()));
+                } else {
+                    filePathList.add(f.getAbsolutePath());
+                }
+            }
+        }
+        return filePathList;
+    }
+
+    /**
+     * 删除文件夹下所有文件和文件夹,包括最外层文件夹
+     *
+     * @param path
+     */
+    public static boolean deleteFilesAndFolder(String path) {
+        boolean result = FileUtil.deleteAllInFolder(path);
+        if (result) {
+            new File(path).delete();
+        } else {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -41,6 +98,5 @@ public class FileUtil {
         }
         return true;
     }
-
 
 }
