@@ -13,6 +13,10 @@
 # PropertiesUtil  
 1.操作properties配置文件根据key获取value  
 
+# JdbcUtil  
+1.获取数据库Connection对象  
+2.获取数据库所有表名  
+
 # 友情援助  
 (您的支持,是我前进的动力,一分也是爱,有任何疑问请联系QQ:747431644)  
 ![image](https://github.com/niyite/image/blob/master/1552375153915.jpg)
