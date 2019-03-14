@@ -1,4 +1,4 @@
-package com.xiaoa.util.http;
+package com.xiaoa.utils.http;
 
 import org.junit.Test;
 

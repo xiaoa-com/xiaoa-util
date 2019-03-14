@@ -1,6 +1,5 @@
-package com.xiaoa.util.email;
+package com.xiaoa.utils.email;
 
-import com.xiaoa.util.prop.PropertiesUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;

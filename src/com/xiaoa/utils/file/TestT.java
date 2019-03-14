@@ -1,4 +1,4 @@
-package com.xiaoa.util.file;
+package com.xiaoa.utils.file;
 
 import org.junit.Test;
 

@@ -1,6 +1,5 @@
-package com.xiaoa.util.prop;
+package com.xiaoa.utils.prop;
 
-import com.xiaoa.util.http.HttpDownLoadUtil;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package com.xiaoa.util.email;
+package com.xiaoa.utils.email;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.mail.internet.MimeUtility;
 
-import com.xiaoa.util.prop.PropertiesUtil;
+import com.xiaoa.utils.prop.PropertiesUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;

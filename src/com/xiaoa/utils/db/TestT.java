@@ -1,4 +1,4 @@
-package com.xiaoa.util.db;
+package com.xiaoa.utils.db;
 
 import org.junit.Test;
 

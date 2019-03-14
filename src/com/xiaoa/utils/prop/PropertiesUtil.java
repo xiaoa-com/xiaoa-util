@@ -1,6 +1,5 @@
-package com.xiaoa.util.prop;
+package com.xiaoa.utils.prop;
 
-import java.io.IOException;
 import java.util.Properties;
 
 /**
