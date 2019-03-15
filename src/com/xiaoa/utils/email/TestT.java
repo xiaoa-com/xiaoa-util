@@ -1,5 +1,6 @@
 package com.xiaoa.utils.email;
 
+import com.xiaoa.utils.image.QRCodeUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -20,5 +21,6 @@ public class TestT {
         boolean send = EmailUtil.send(emails, "测试", "这是内容主体", null, null);
         System.out.println(send);
     }
+
 
 }

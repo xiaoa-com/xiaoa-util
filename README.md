@@ -17,6 +17,10 @@
 1.获取数据库Connection对象  
 2.获取数据库所有表名  
 
+# QRCodeUtil  
+1.根据内容生成二维码  
+2.解析二维码  
+
 # 友情援助  
 (您的支持,是我前进的动力,一分也是爱,有任何疑问请联系QQ:747431644)  
 ![image](https://github.com/niyite/image/blob/master/1552375153915.jpg)
