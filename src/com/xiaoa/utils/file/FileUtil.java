@@ -1,5 +1,7 @@
 package com.xiaoa.utils.file;
 
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,105 @@ public class FileUtil {
 
 
     private FileUtil() {
+    }
+
+    /**
+     * 获取文件前缀的长度
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> 3
+     */
+    public static Integer getFilePrefixLength(String fileName) {
+        return FilenameUtils.getPrefixLength(fileName);
+    }
+
+    /**
+     * 获取文件前缀
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> D:\
+     */
+    public static String getFilePrefix(String fileName) {
+        return FilenameUtils.getPrefix(fileName);
+    }
+
+    /**
+     * 获取文件不带前缀和最后文件分隔符的路径
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> test
+     */
+    public static String getFilePathNoEndSeparator(String fileName) {
+        return FilenameUtils.getPathNoEndSeparator(fileName);
+    }
+
+    /**
+     * 获取文件不带前缀的路径
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> test\
+     */
+    public static String getFilePath(String fileName) {
+        return FilenameUtils.getPath(fileName);
+    }
+
+    /**
+     * 获取文件带前缀不带最后文件分隔符的路径
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> D:\test
+     */
+    public static String getFileFullPathNoEndSeparator(String fileName) {
+        return FilenameUtils.getFullPathNoEndSeparator(fileName);
+    }
+
+    /**
+     * 获取文件带前缀带最后文件分隔符的路径
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> D:\test\
+     */
+    public static String getFileFullPath(String fileName) {
+        return FilenameUtils.getFullPath(fileName);
+    }
+
+    /**
+     * 获取基本文件名,不带后缀
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> 小新
+     */
+    public static String getFileBaseName(String fileName) {
+        return FilenameUtils.getBaseName(fileName);
+    }
+
+    /**
+     * 获取文件名,带后缀的
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> 小新.jpg
+     */
+    public static String getFileName(String fileName) {
+        return FilenameUtils.getName(fileName);
+    }
+
+    /**
+     * 获取文件后缀
+     *
+     * @param fileName 文件磁盘路径
+     * @return
+     * @forexample D:\test\小新.jpg --> jpg
+     */
+    public static String getFileSuffix(String fileName) {
+        return FilenameUtils.getExtension(fileName);
     }
 
     /**
@@ -35,7 +136,7 @@ public class FileUtil {
         }
         return fileNameList;
     }
-    
+
     /**
      * 获取目录下所有的文件的绝对路径
      *
