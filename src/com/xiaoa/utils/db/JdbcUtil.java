@@ -25,6 +25,54 @@ public class JdbcUtil {
      */
     public static final String SQLSERVER_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
+    /**
+     * 执行一条sql语句(insert, update, delete)
+     *
+     * @param conn
+     * @param sql  insert into tableName values(?,?)
+     * @param obj  [1,2]
+     */
+    public static void execute(Connection conn, String sql, Object[] obj) {
+        PreparedStatement pst = null;
+        try {
+            if (conn == null || conn.isClosed()) {
+                throw new IllegalArgumentException("Connection has bean closed!");
+            }
+            if (sql == null) {
+                throw new IllegalArgumentException("The sql must not be null");
+            }
+
+            conn.setAutoCommit(false);
+            pst = conn.prepareStatement(sql);
+            if (obj != null && obj.length > 0) {
+                for (int i = 0; i < obj.length; i++) {
+                    pst.setObject(i + 1, obj[i]);
+                }
+            }
+            pst.executeUpdate();
+            conn.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        } finally {
+            try {
+                if (pst != null) pst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 获取数据库中所有的表
+     *
+     * @param connection
+     * @return
+     */
     public static List<String> getTableNameFromDataBase(Connection connection) {
         List<String> tableNames = new ArrayList<String>();
         try {

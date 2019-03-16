@@ -25,6 +25,7 @@
 # JdbcUtil  
 1.获取数据库Connection对象  
 2.获取数据库所有表名  
+3.增加直接使用jdbc操作数据库的方法  
 
 # QRCodeUtil  
 1.根据内容生成二维码  

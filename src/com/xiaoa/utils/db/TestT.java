@@ -3,6 +3,7 @@ package com.xiaoa.utils.db;
 import org.junit.Test;
 
 import java.sql.Connection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,14 +23,23 @@ public class TestT {
             System.out.println("连接Mysql成功");
         }
     }
+
     @Test
-    public void testTT(){
+    public void testTT() {
         Connection conn = JdbcUtil.getConnection(JdbcUtil.MYSQL_DRIVER, "jdbc:mysql://192.168.137.100:3306/legou", "root", "123456");
         List<String> tableNameFromDataBase = JdbcUtil.getTableNameFromDataBase(conn);
         for (String s : tableNameFromDataBase) {
             System.out.println(s);
         }
 
+    }
+
+    @Test
+    public void testTTT() {
+        Connection conn = JdbcUtil.getConnection(JdbcUtil.MYSQL_DRIVER, "jdbc:mysql://192.168.137.100:3306/legou", "root", "123456");
+        String sql = "insert into tb_user values(?,?,?,?,?)";
+        Object[] obj = {1, "xiaoa", "123456", "17343202219", new Date()};
+        JdbcUtil.execute(conn, sql, obj);
     }
 
 }
