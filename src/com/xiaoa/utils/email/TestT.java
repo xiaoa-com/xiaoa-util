@@ -1,6 +1,5 @@
 package com.xiaoa.utils.email;
 
-import com.xiaoa.utils.image.QRCodeUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;

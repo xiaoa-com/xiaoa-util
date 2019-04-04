@@ -26,6 +26,7 @@ import java.util.Map;
  * @Date 2019/3/14 19:42
  * @Version 1.0
  **/
+@SuppressWarnings("deprecation")
 public class QRCodeUtil {
     private static final Map<EncodeHintType, Object> ENCODE_HINTS = new EnumMap<EncodeHintType, Object>(EncodeHintType.class) {
         private static final long serialVersionUID = 1L;

@@ -1,8 +1,12 @@
 package com.xiaoa.utils.file;
 
+import com.sun.mail.smtp.DigestMD5;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -196,6 +200,71 @@ public class FileUtil {
             }
         }
         return true;
+    }
+
+    public static List<String> getLowestFolders(String path) {
+        List<String> folders = new ArrayList<String>();
+        List<File> allFolders = getAllFolders(path);
+        List<File> notLowestFolders = new ArrayList<File>();
+        for (File allFolder : allFolders) {
+            boolean flag = false;
+            File[] files = allFolder.listFiles();
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag) {
+                notLowestFolders.add(allFolder);
+            }
+        }
+        allFolders.removeAll(notLowestFolders);
+        for (File allFolder : allFolders) {
+            folders.add(allFolder.getAbsolutePath());
+        }
+        return folders;
+    }
+
+    public static List<File> getAllFolders(String path) {
+        List<File> files = new ArrayList<>();
+        File file = new File(path);
+        File[] f1 = file.listFiles();
+        for (File f2 : f1) {
+            if (FileUtil.isLowestFolder(f2)) {
+                files.add(f2);
+            } else if (f2.isDirectory()) {
+                List<File> fs = getAllFolders(f2.getAbsolutePath());
+                files.addAll(fs);
+            }
+        }
+        return files;
+    }
+
+    private static boolean isLowestFolder(File f2) {
+        boolean flag = true;
+        if (f2.isDirectory()) {
+            File[] files = f2.listFiles();
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    flag = false;
+                    break;
+                }
+            }
+        } else {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public static String getMd5(String path) {
+        String md5Hex = "";
+        try {
+            md5Hex = DigestUtils.md5Hex(new FileInputStream(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return md5Hex;
     }
 
 }

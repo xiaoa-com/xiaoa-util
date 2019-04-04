@@ -3,7 +3,9 @@ package com.xiaoa.utils.file;
 import org.apache.commons.io.FilenameUtils;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName TestT
@@ -63,4 +65,35 @@ public class TestT {
         System.out.println(filePrefixLength);
     }
 
+    @Test
+    public void testTTTTTT() {
+        List<String> lowestFolders = FileUtil.getLowestFolders("D:\\a");
+        for (String lowestFolder : lowestFolders) {
+            System.out.println(lowestFolder);
+        }
+    }
+
+    @Test
+    public void testTTTTTTT() {
+        String path = "D:/a/1.xls";
+        String path2 = "D:/a/2.xls";
+        String path3 = "D:/a/3.jpg";
+        String path4 = "D:/a/a.xlsx";
+        String md5 = FileUtil.getMd5(path);
+        String md52 = FileUtil.getMd5(path2);
+        String md53 = FileUtil.getMd5(path3);
+        String md54 = FileUtil.getMd5(path4);
+
+        System.out.println(path+"-------"+md5);
+        System.out.println(path2+"-------"+md52);
+        System.out.println(path3+"-------"+md53);
+        System.out.println(path4+"-------"+md54);
+    }
+    @Test
+    public void testTTTTTTTT() {
+        Map map = new HashMap<String,String>();
+        map.put("1","a");
+        map.put("1","b");
+        System.out.println(map);
+    }
 }
