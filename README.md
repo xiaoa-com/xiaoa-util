@@ -1,10 +1,10 @@
-# xiaoa-util
+## xiaoa-util
 自己的工具类
 
-# HttpDownLoadUtil  
+#### HttpDownLoadUtil  
 1.通过url下载文件到指定的本地目录 
 
-# FileUtil  
+#### FileUtil  
 1.删除文件夹下所有文件,保留文件夹本身  
 2.删除文件夹及文件夹下所有文件  
 3.获取文件夹包括子文件夹下所有文件的绝对路径  
@@ -19,18 +19,31 @@
 12.获取文件前缀  D:\test\小新.jpg --> D:\
 13.获取文件前缀的长度  D:\test\小新.jpg --> 3
 
-# PropertiesUtil  
+#### PropertiesUtil  
 1.操作properties配置文件根据key获取value  
 
-# JdbcUtil  
+#### JdbcUtil  
 1.获取数据库Connection对象  
 2.获取数据库所有表名  
 3.增加直接使用jdbc操作数据库的方法  
 
-# QRCodeUtil  
+#### QRCodeUtil  
 1.根据内容生成二维码  
 2.解析二维码  
 
-# 友情援助  
+####  Excel
+1.解析excel   
+2.写excel  
+
+####  EmailUtil
+发送邮件
+
+####  ZooKeeper
+通过阻塞方法监听zookeeper节点变化  
+
+####  PropertiesUtil
+解析properties配置文件,通过key获取value  
+
+#### 友情援助  
 (您的支持,是我前进的动力,一分也是爱,有任何疑问请联系QQ:747431644)  
 ![image](https://github.com/niyite/image/blob/master/1552375153915.jpg)
