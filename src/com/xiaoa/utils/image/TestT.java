@@ -22,8 +22,8 @@ public class TestT {
         QRCodeUtil.encode(content, 300, 300, qrImagePath, "D:/test/小新.jpg");
 
         List<String> emails = new ArrayList<>();
-        emails.add("amber_hj@163.com");
-        boolean send = EmailUtil.send(emails, "测试二维码", "扫我", "D:", "test.png");
+        emails.add("1067878510@qq.com");
+        boolean send = EmailUtil.send(emails, "来自爸爸的第二封信", "扫我", "D:", "test.png");
         System.out.println(send);
     }
 

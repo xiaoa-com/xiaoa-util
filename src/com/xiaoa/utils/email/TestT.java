@@ -19,6 +19,12 @@ public class TestT {
         emails.add("amber_hj@163.com");
         boolean send = EmailUtil.send(emails, "测试", "这是内容主体", null, null);
         System.out.println(send);
+    }@Test
+    public void testTT() {
+        List<String> emails = new ArrayList<>();
+        emails.add("1067878510@qq.com");
+        boolean send = EmailUtil.send(emails, "来自爸爸的一封信", "这是内容主体", null, null);
+        System.out.println(send);
     }
 
 
