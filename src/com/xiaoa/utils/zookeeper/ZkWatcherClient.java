@@ -37,8 +37,8 @@ public class ZkWatcherClient {
 
         while (true){
             try {
-                Thread.sleep(5000l);
-                System.err.println("我还活着呢!!!");
+                Thread.sleep(Integer.MAX_VALUE);
+//                System.err.println("我还活着呢!!!");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
