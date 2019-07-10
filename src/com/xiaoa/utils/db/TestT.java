@@ -23,9 +23,9 @@ public class TestT {
     public void testT() {
         Connection conn = JdbcUtil.getConnection(JdbcUtil.MYSQL_DRIVER, "jdbc:mysql://192.168.137.100:3306/legou", "root", "123456");
         if (null == conn) {
-            log.info("连接mysql失败");
+            log.error("连接mysql失败");
         } else {
-            System.out.println("连接Mysql成功");
+            log.info("连接Mysql成功");
         }
     }
 
