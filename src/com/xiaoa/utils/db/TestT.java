@@ -1,6 +1,8 @@
 package com.xiaoa.utils.db;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.util.Date;
@@ -14,11 +16,14 @@ import java.util.List;
  * @Version 1.0
  **/
 public class TestT {
+    //记录日志
+    private static Logger log = LoggerFactory.getLogger(TestT.class);
+
     @Test
     public void testT() {
         Connection conn = JdbcUtil.getConnection(JdbcUtil.MYSQL_DRIVER, "jdbc:mysql://192.168.137.100:3306/legou", "root", "123456");
         if (null == conn) {
-            System.out.println("连接mysql失败");
+            log.info("连接mysql失败");
         } else {
             System.out.println("连接Mysql成功");
         }
